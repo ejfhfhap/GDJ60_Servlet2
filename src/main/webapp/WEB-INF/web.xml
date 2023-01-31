@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <servlet>
+  	<!-- HomeControll home = new HomeControll() 객체 생성하는 코드 --> 
+  	<servlet-name>home</servlet-name>
+  	<servlet-class>com.iu.home.HomeController</servlet-class>
+  </servlet>
+  
+  <!-- / 이런 패턴으로 들어오면 home 객체 실행 -->
+  <servlet-mapping>
+  	<servlet-name>home</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>product</servlet-name>
+  	<servlet-class>com.iu.home.product.ProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>product</servlet-name>
+  	<url-pattern>/Product</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
