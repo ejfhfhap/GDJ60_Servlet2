@@ -22,4 +22,12 @@
   	<url-pattern>/Product</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>member</servlet-name>
+  	<servlet-class>com.sam.home.member.MemberController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>member</servlet-name>
+  	<url-pattern>/member/memberList.do</url-pattern>
+  </servlet-mapping>
 </web-app>
