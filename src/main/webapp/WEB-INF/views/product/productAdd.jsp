@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Home Page</h1>
-	<a href = "Product?name=test&detail=explain">product list</a>
-	<a href = "member/memberList.do">member List</a>
+	<h1>add page</h1>
 </body>
 </html>

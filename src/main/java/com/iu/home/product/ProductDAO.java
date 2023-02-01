@@ -3,12 +3,32 @@ package com.iu.home.product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.sam.home.util.DBConnection;
 
 public class ProductDAO {
+	public ProductDTO getProductDetail(ProductDTO dto) throws Exception {
+		
+		Connection connection = DBConnection.getConnection();
+		String sql = "SELECT * FROM PRODUCT WHERE PRODUCT_NUM = ?";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setInt(1, dto.getPRODUCT_NUM());
+		ResultSet resultSet = preparedStatement.executeQuery();
+		
+		ProductDTO productDTO = null;
+		if(resultSet.next()) {
+			productDTO = new ProductDTO();
+			productDTO.setPRODUCT_NUM(resultSet.getInt("PRODUCT_NUM"));
+			productDTO.setPRODUCT_DETAIL(resultSet.getString("PRODUCT_DETAIL"));
+			productDTO.setPRODUCT_NAME(resultSet.getString("PRODUCT_NAME"));
+			productDTO.setPRODUCT_RATE(resultSet.getDouble("PRODUCT_RATE"));
+		}
+		DBConnection.disConnection(resultSet, preparedStatement, connection);
+		return productDTO;
+	}
 	public int getProductNum() throws Exception {
 		Connection connection = DBConnection.getConnection();
 		String sql = "SELECT PRODUCT_SEQ.NEXTVAL FROM DUAL";

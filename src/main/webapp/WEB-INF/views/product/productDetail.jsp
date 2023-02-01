@@ -1,3 +1,4 @@
+<%@page import="com.iu.home.product.ProductDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Home Page</h1>
-	<a href = "Product?name=test&detail=explain">product list</a>
-	<a href = "member/memberList.do">member List</a>
+	<h1>detail page</h1>
+	<% ProductDTO productDTO = (ProductDTO)request.getAttribute("productDTO"); %>
+	<%= productDTO.getPRODUCT_NAME() %>
 </body>
 </html>

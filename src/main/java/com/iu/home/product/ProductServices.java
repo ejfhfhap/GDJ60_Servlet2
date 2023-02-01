@@ -15,8 +15,14 @@ public class ProductServices {
 	public void setProductDAO(ProductDAO productDAO) {
 		this.productDAO = productDAO;
 	}
-
+	
+	public List<ProductDTO> getProductList() throws Exception{
+		return productDAO.getProductList();
+	}
 	// 상품 하나 추가하기 서비스 클래스
+	public ProductDTO getProductDetail(ProductDTO productDTO)throws Exception{
+		return productDAO.getProductDetail(productDTO);
+	}
 	public int AddProduct(ProductDTO productDTO, List<ProductOptionDTO> ar) throws Exception {
 		int productNum = productDAO.getProductNum(); // 시퀀스 번호 구하기
 		int result = productDAO.AddProduct(productNum, productDTO);

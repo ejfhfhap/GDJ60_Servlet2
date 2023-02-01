@@ -19,7 +19,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>product</servlet-name>
-  	<url-pattern>/Product</url-pattern>
+  	<url-pattern>/product/*</url-pattern> <!-- product로 시작하는 url은 모두 여기로 옴, 프로덕트 crud 모두 페이지 합치기 위함  -->
   </servlet-mapping>
   
   <servlet>
